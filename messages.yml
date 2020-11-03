@@ -1,0 +1,8 @@
+error:
+  noconsole: "&cThis command cant be executed from the console!"
+  nopermission: "&cYou dont have permission to use this command!"
+  notloaded: "&cYour data is not loaded yet!"
+success:
+  reload: "&aQuests plugin successfully reloaded!"
+quest:
+  completed: "&e&k0&a>> Quest Completed: &6%quest_name%&a <<&e&k0"

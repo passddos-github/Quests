@@ -1,0 +1,152 @@
+categories:
+  enderpearls:
+    displayname: "&aEnderpearl Quests"
+    title: "&8Enderpearl Quests"
+    lore:
+      - "&8Quests about using enderpearls!"
+      - "&7"
+      - "%status%"
+    lines: 4
+    slot: 10
+    material: "ENDER_PEARL"
+    quests:
+      - "enderpearl1"
+      - "enderpearl2"
+      - "enderpearl3"
+      - "enderpearl4"
+      - "enderpearl5"
+      - "enderpearl6"
+      - "enderpearl7"
+
+  damageswords:
+    displayname: "&aSword Damage Quests"
+    title: "&8Sword Damage Quests"
+    lore:
+      - "&8Quests about dealing damage with swords!"
+      - "&7"
+      - "%status%"
+    lines: 4
+    slot: 11
+    material: "IRON_SWORD"
+    quests:
+      - "damageswords1"
+      - "damageswords2"
+      - "damageswords3"
+      - "damageswords4"
+      - "damageswords5"
+      - "damageswords6"
+      - "damageswords7"
+
+  damagebows:
+    displayname: "&aBow Damage Quests"
+    title: "&8Bow Damage Quests"
+    lore:
+      - "&8Quests about dealing damage with bows!"
+      - "&7"
+      - "%status%"
+    lines: 4
+    slot: 12
+    material: "BOW"
+    quests:
+      - "damagebows1"
+      - "damagebows2"
+      - "damagebows3"
+      - "damagebows4"
+      - "damagebows5"
+      - "damagebows6"
+      - "damagebows7"
+
+  killer:
+    displayname: "&aKiller Quests"
+    title: "&8Killer Quests"
+    lore:
+      - "&8Quests about killing players!"
+      - "&7"
+      - "%status%"
+    lines: 4
+    slot: 13
+    material: "SKULL_ITEM"
+    quests:
+      - "killer1"
+      - "killer2"
+      - "killer3"
+      - "killer4"
+      - "killer5"
+      - "killer6"
+      - "killer7"
+
+  blockplacer:
+    displayname: "&aBlock Placer Quests"
+    title: "&8Block Placer Quests"
+    lore:
+      - "&8Quests about placing blocks!"
+      - "&7"
+      - "%status%"
+    lines: 4
+    slot: 14
+    material: "BRICK"
+    quests:
+      - "blockplacer1"
+      - "blockplacer2"
+      - "blockplacer3"
+      - "blockplacer4"
+      - "blockplacer5"
+      - "blockplacer6"
+      - "blockplacer7"
+
+  blockbreaker:
+    displayname: "&aBlock Breaker Quests"
+    title: "&8Block Breaker Quests"
+    lore:
+      - "&8Quests about breaking blocks!"
+      - "&7"
+      - "%status%"
+    lines: 4
+    slot: 15
+    material: "IRON_PICKAXE"
+    quests:
+      - "blockbreaker1"
+      - "blockbreaker2"
+      - "blockbreaker3"
+      - "blockbreaker4"
+      - "blockbreaker5"
+      - "blockbreaker6"
+      - "blockbreaker7"
+
+  damagereceiver:
+    displayname: "&aDamage Receiver Quests"
+    title: "&8Damage Receiver Quests"
+    lore:
+      - "&8Quests about receiving damage!"
+      - "&7"
+      - "%status%"
+    lines: 4
+    slot: 16
+    material: "IRON_HELMET"
+    quests:
+      - "damagereceiver1"
+      - "damagereceiver2"
+      - "damagereceiver3"
+      - "damagereceiver4"
+      - "damagereceiver5"
+      - "damagereceiver6"
+      - "damagereceiver7"
+
+  repeatables:
+    displayname: "&aRepeatable Category"
+    title: "&8Repeatable Category"
+    lore:
+      - "&8This Quests can be repeated!"
+      - "&7"
+      - "&eClick to see more!"
+    lines: 4
+    slot: 22
+    material: "EMPTY_MAP"
+    quests:
+      - "repeatable1"
+      - "repeatable2"
+      - "repeatable3"
+      - "repeatable4"
+      - "repeatable5"
+      - "repeatable6"
+      - "repeatable7"

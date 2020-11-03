@@ -1,0 +1,43 @@
+# Place where ymls will be saved and loaded.
+# Placeholders: %datafolder% (Means the default plugin folder)
+files:
+  # Data from players.
+  data: "%datafolder%/data/"
+  # Data from the categories loaded by the plugin.
+  categories: "%datafolder%/"
+  # Data from the quests loaded by the plugin.
+  quests: "%datafolder%/"
+
+mysql:
+  # Enable this to save player data on MySQL.
+  enabled: false
+  host: "localhost"
+  port: 3306
+  database: "Quests"
+  username: "root"
+  password: "123"
+
+menu:
+  # You can set this to a category name and it will open automatically when opening the menu.
+  open_category: null
+
+  close_item:
+    enabled: true
+    material: "BARRIER"
+    displayname: "&cClose"
+    lore: []
+    slot: 31
+  back_item:
+    enabled: true
+    material: "ARROW"
+    displayname: "&cBack"
+    lore: []
+    slot: 31
+
+  black_glass: true
+  title: "&8Quests"
+  lines: 4
+  status:
+    completed: "&aQuest Completed!"
+    current: "&e%percentage% Completed!"
+    blocked: "&cQuest Blocked!"

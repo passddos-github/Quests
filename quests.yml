@@ -1,0 +1,1239 @@
+#
+# You can set multiple objectives for each quest.
+#
+# Available Events for Objectives:
+#
+# BlockBreakEvent,(Material of Block),(Amount)
+# BlockPlaceEvent,(Material of Block),(Amount)
+# EntityDamageByEntityEvent,(Material of Weapon),(Entity Type),(Amount)
+# EntityDamageEvent,(Material of Weapon),(Damage Cause),(Amount)
+# EntityDeathEvent,(Material of Weapon),(Damage Cause),(Entity Type),(Entity Custom Name),(Amount)
+# PlayerPickupItemEvent,(Material of Item),(Amount)
+# ProjectileLaunchEvent,(Material of Projectile),(Amount)
+#
+# Add "daily: true" inside a quest to make it a daily quest. (The quest will reset on server restart)
+# Add "repeatable: true" inside a quest to make it repeatable. (The quest will reset on complete)
+# Add "depend: (Quest name)" to make the quest blocked until the depend quest is completed.
+#
+# List of Materials: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# List of Entity Types: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+# List of Damage Causes: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
+#
+
+quests:
+  #
+  # EnderPearl Quests
+  #
+  enderpearl1:
+    displayname:
+      common: "Enderpearl I"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Use &61 &7enderpearl!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e5 &7Coins"
+      - ""
+      - "%status%"
+    slot: 10
+    material: "ENDER_PEARL"
+    repeatable: false
+    objectives:
+      - "ProjectileLaunchEvent,ENDER_PEARL,1"
+    commands:
+      - "eco give %player% 5"
+  enderpearl2:
+    displayname:
+      common: "Enderpearl II"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Use &68 &7enderpearls!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 11
+    material: "ENDER_PEARL"
+    depend: "enderpearl1"
+    objectives:
+      - "ProjectileLaunchEvent,ENDER_PEARL,8"
+    commands:
+      - "eco give %player% 20"
+  enderpearl3:
+    displayname:
+      common: "Enderpearl III"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Use &616 &7enderpearls!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e30 &7Coins"
+      - ""
+      - "%status%"
+    slot: 12
+    material: "ENDER_PEARL"
+    depend: "enderpearl2"
+    objectives:
+      - "ProjectileLaunchEvent,ENDER_PEARL,16"
+    commands:
+      - "eco give %player% 30"
+  enderpearl4:
+    displayname:
+      common: "Enderpearl IV"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Use &632 &7enderpearls!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e60 &7Coins"
+      - ""
+      - "%status%"
+    slot: 13
+    material: "ENDER_PEARL"
+    depend: "enderpearl3"
+    objectives:
+      - "ProjectileLaunchEvent,ENDER_PEARL,32"
+    commands:
+      - "eco give %player% 60"
+  enderpearl5:
+    displayname:
+      common: "Enderpearl V"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Use &664 &7enderpearls!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e120 &7Coins"
+      - ""
+      - "%status%"
+    slot: 14
+    material: "ENDER_PEARL"
+    repeatable: false
+    depend: "enderpearl4"
+    objectives:
+      - "ProjectileLaunchEvent,ENDER_PEARL,64"
+    commands:
+      - "eco give %player% 120"
+  enderpearl6:
+    displayname:
+      common: "Enderpearl VI"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Use &6128 &7enderpearls!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e240 &7Coins"
+      - ""
+      - "%status%"
+    slot: 15
+    material: "ENDER_PEARL"
+    depend: "enderpearl5"
+    objectives:
+      - "ProjectileLaunchEvent,ENDER_PEARL,128"
+    commands:
+      - "eco give %player% 240"
+  enderpearl7:
+    displayname:
+      common: "Enderpearl VII"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Use &6256 &7enderpearls!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e480 &7Coins"
+      - ""
+      - "%status%"
+    slot: 16
+    material: "ENDER_PEARL"
+    depend: "enderpearl6"
+    objectives:
+      - "ProjectileLaunchEvent,ENDER_PEARL,256"
+    commands:
+      - "eco give %player% 480"
+  #
+  # Sword Damage Quests
+  #
+  damageswords1:
+    displayname:
+      common: "Sword Damage I"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6100 &7damage with swords!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e10 &7Coins"
+      - ""
+      - "%status%"
+    slot: 10
+    material: "IRON_SWORD"
+    repeatable: false
+    objectives:
+      - "EntityDamageByEntityEvent,SWORD,PLAYER,100"
+    commands:
+      - "eco give %player% 10"
+
+  damageswords2:
+    displayname:
+      common: "Sword Damage II"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6200 &7damage with swords!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 11
+    material: "IRON_SWORD"
+    repeatable: false
+    depend: "damageswords1"
+    objectives:
+      - "EntityDamageByEntityEvent,SWORD,PLAYER,200"
+    commands:
+      - "eco give %player% 20"
+
+  damageswords3:
+    displayname:
+      common: "Sword Damage III"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6400 &7damage with swords!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e40 &7Coins"
+      - ""
+      - "%status%"
+    slot: 12
+    material: "IRON_SWORD"
+    repeatable: false
+    depend: "damageswords2"
+    objectives:
+      - "EntityDamageByEntityEvent,SWORD,PLAYER,400"
+    commands:
+      - "eco give %player% 40"
+
+  damageswords4:
+    displayname:
+      common: "Sword Damage IV"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6800 &7damage with swords!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e80 &7Coins"
+      - ""
+      - "%status%"
+    slot: 13
+    material: "IRON_SWORD"
+    repeatable: false
+    depend: "damageswords3"
+    objectives:
+      - "EntityDamageByEntityEvent,SWORD,PLAYER,800"
+    commands:
+      - "eco give %player% 80"
+
+  damageswords5:
+    displayname:
+      common: "Sword Damage V"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &61600 &7damage with swords!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e160 &7Coins"
+      - ""
+      - "%status%"
+    slot: 14
+    material: "IRON_SWORD"
+    repeatable: false
+    depend: "damageswords4"
+    objectives:
+      - "EntityDamageByEntityEvent,SWORD,PLAYER,1600"
+    commands:
+      - "eco give %player% 160"
+
+  damageswords6:
+    displayname:
+      common: "Sword Damage VI"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &63200 &7damage with swords!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e320 &7Coins"
+      - ""
+      - "%status%"
+    slot: 15
+    material: "IRON_SWORD"
+    repeatable: false
+    depend: "damageswords5"
+    objectives:
+      - "EntityDamageByEntityEvent,SWORD,PLAYER,3200"
+    commands:
+      - "eco give %player% 320"
+
+  damageswords7:
+    displayname:
+      common: "Sword Damage VII"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &66400 &7damage with swords!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e640 &7Coins"
+      - ""
+      - "%status%"
+    slot: 16
+    material: "IRON_SWORD"
+    repeatable: false
+    depend: "damageswords6"
+    objectives:
+      - "EntityDamageByEntityEvent,SWORD,PLAYER,6400"
+    commands:
+      - "eco give %player% 640"
+  #
+  # Bow Damage Quests
+  #
+  damagebows1:
+    displayname:
+      common: "Bow Damage I"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6100 &7damage with bows!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e10 &7Coins"
+      - ""
+      - "%status%"
+    slot: 10
+    material: "BOW"
+    repeatable: false
+    objectives:
+      - "EntityDamageByEntityEvent,BOW,PLAYER,100"
+    commands:
+      - "eco give %player% 10"
+
+  damagebows2:
+    displayname:
+      common: "Bow Damage II"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6200 &7damage with bows!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 11
+    material: "BOW"
+    repeatable: false
+    depend: "damagebows1"
+    objectives:
+      - "EntityDamageByEntityEvent,BOW,PLAYER,200"
+    commands:
+      - "eco give %player% 20"
+
+  damagebows3:
+    displayname:
+      common: "Bow Damage III"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6400 &7damage with bows!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e40 &7Coins"
+      - ""
+      - "%status%"
+    slot: 12
+    material: "BOW"
+    repeatable: false
+    depend: "damagebows2"
+    objectives:
+      - "EntityDamageByEntityEvent,BOW,PLAYER,400"
+    commands:
+      - "eco give %player% 40"
+
+  damagebows4:
+    displayname:
+      common: "Bow Damage IV"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6800 &7damage with bows!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e80 &7Coins"
+      - ""
+      - "%status%"
+    slot: 13
+    material: "BOW"
+    repeatable: false
+    depend: "damagebows3"
+    objectives:
+      - "EntityDamageByEntityEvent,BOW,PLAYER,800"
+    commands:
+      - "eco give %player% 80"
+
+  damagebows5:
+    displayname:
+      common: "Bow Damage V"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &61600 &7damage with bows!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e160 &7Coins"
+      - ""
+      - "%status%"
+    slot: 14
+    material: "BOW"
+    repeatable: false
+    depend: "damagebows4"
+    objectives:
+      - "EntityDamageByEntityEvent,BOW,PLAYER,1600"
+    commands:
+      - "eco give %player% 160"
+
+  damagebows6:
+    displayname:
+      common: "Bow Damage VI"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &63200 &7damage with bows!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e320 &7Coins"
+      - ""
+      - "%status%"
+    slot: 15
+    material: "BOW"
+    repeatable: false
+    depend: "damagebows5"
+    objectives:
+      - "EntityDamageByEntityEvent,BOW,PLAYER,3200"
+    commands:
+      - "eco give %player% 320"
+
+  damagebows7:
+    displayname:
+      common: "Bow Damage VII"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &66400 &7damage with bows!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e640 &7Coins"
+      - ""
+      - "%status%"
+    slot: 16
+    material: "BOW"
+    repeatable: false
+    depend: "damagebows6"
+    objectives:
+      - "EntityDamageByEntityEvent,BOW,PLAYER,6400"
+    commands:
+      - "eco give %player% 640"
+  #
+  # Killer Quests
+  #
+  killer1:
+    displayname:
+      common: "Killer I"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Kill &61 &7player!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e10 &7Coins"
+      - ""
+      - "%status%"
+    slot: 10
+    material: "SKULL_ITEM"
+    repeatable: false
+    objectives:
+      - "EntityDeathEvent,ANY,ANY,PLAYER,ANY,1"
+    commands:
+      - "eco give %player% 10"
+
+  killer2:
+    displayname:
+      common: "Killer II"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Kill &616 &7players!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 11
+    material: "SKULL_ITEM"
+    repeatable: false
+    depend: "killer1"
+    objectives:
+      - "EntityDeathEvent,ANY,ANY,PLAYER,ANY,16"
+    commands:
+      - "eco give %player% 20"
+
+  killer3:
+    displayname:
+      common: "Killer III"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Kill &632 &7players!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e40 &7Coins"
+      - ""
+      - "%status%"
+    slot: 12
+    material: "SKULL_ITEM"
+    repeatable: false
+    depend: "killer2"
+    objectives:
+      - "EntityDeathEvent,ANY,ANY,PLAYER,ANY,32"
+    commands:
+      - "eco give %player% 40"
+
+  killer4:
+    displayname:
+      common: "Killer IV"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Kill &664 &7players!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e80 &7Coins"
+      - ""
+      - "%status%"
+    slot: 13
+    material: "SKULL_ITEM"
+    repeatable: false
+    depend: "killer3"
+    objectives:
+      - "EntityDeathEvent,ANY,ANY,PLAYER,ANY,64"
+    commands:
+      - "eco give %player% 80"
+
+  killer5:
+    displayname:
+      common: "Killer V"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Kill &6128 &7players!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e160 &7Coins"
+      - ""
+      - "%status%"
+    slot: 14
+    material: "SKULL_ITEM"
+    repeatable: false
+    depend: "killer4"
+    objectives:
+      - "EntityDeathEvent,ANY,ANY,PLAYER,ANY,128"
+    commands:
+      - "eco give %player% 160"
+
+  killer6:
+    displayname:
+      common: "Killer VI"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Kill &6256 &7players!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e320 &7Coins"
+      - ""
+      - "%status%"
+    slot: 15
+    material: "SKULL_ITEM"
+    repeatable: false
+    depend: "killer5"
+    objectives:
+       - "EntityDeathEvent,ANY,ANY,PLAYER,ANY,256"
+    commands:
+      - "eco give %player% 320"
+
+  killer7:
+    displayname:
+      common: "Killer VII"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Kill &6512 &7players!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e640 &7Coins"
+      - ""
+      - "%status%"
+    slot: 16
+    material: "SKULL_ITEM"
+    repeatable: false
+    depend: "killer6"
+    objectives:
+      - "EntityDeathEvent,ANY,ANY,PLAYER,ANY,512"
+    commands:
+      - "eco give %player% 640"
+  #
+  # Block Placer Quests
+  #
+  blockplacer1:
+    displayname:
+      common: "Block Placer I"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Place &632 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e10 &7Coins"
+      - ""
+      - "%status%"
+    slot: 10
+    material: "BRICK"
+    repeatable: false
+    objectives:
+      - "BlockPlaceEvent,ANY,32"
+    commands:
+      - "eco give %player% 10"
+
+  blockplacer2:
+    displayname:
+      common: "Block Placer II"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Place &664 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 11
+    material: "BRICK"
+    repeatable: false
+    depend: "blockplacer1"
+    objectives:
+      - "BlockPlaceEvent,ANY,64"
+    commands:
+      - "eco give %player% 20"
+
+  blockplacer3:
+    displayname:
+      common: "Block Placer III"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Place &6128 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e40 &7Coins"
+      - ""
+      - "%status%"
+    slot: 12
+    material: "BRICK"
+    repeatable: false
+    depend: "blockplacer2"
+    objectives:
+      - "BlockPlaceEvent,ANY,128"
+    commands:
+      - "eco give %player% 40"
+
+  blockplacer4:
+    displayname:
+      common: "Block Placer IV"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Place &6256 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e80 &7Coins"
+      - ""
+      - "%status%"
+    slot: 13
+    material: "BRICK"
+    repeatable: false
+    depend: "blockplacer3"
+    objectives:
+      - "BlockPlaceEvent,ANY,256"
+    commands:
+      - "eco give %player% 80"
+
+  blockplacer5:
+    displayname:
+      common: "Block Placer V"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Place &6512 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e160 &7Coins"
+      - ""
+      - "%status%"
+    slot: 14
+    material: "BRICK"
+    repeatable: false
+    depend: "blockplacer4"
+    objectives:
+      - "BlockPlaceEvent,ANY,512"
+    commands:
+      - "eco give %player% 160"
+
+  blockplacer6:
+    displayname:
+      common: "Block Placer VI"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Place &61024 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e320 &7Coins"
+      - ""
+      - "%status%"
+    slot: 15
+    material: "BRICK"
+    repeatable: false
+    depend: "blockplacer5"
+    objectives:
+      - "BlockPlaceEvent,ANY,1024"
+    commands:
+      - "eco give %player% 320"
+
+  blockplacer7:
+    displayname:
+      common: "Block Placer VII"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Place &62048 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e640 &7Coins"
+      - ""
+      - "%status%"
+    slot: 16
+    material: "BRICK"
+    repeatable: false
+    depend: "blockplacer6"
+    objectives:
+      - "BlockPlaceEvent,ANY,2048"
+    commands:
+      - "eco give %player% 640"
+  #
+  # Block Breaker Quests
+  #
+  blockbreaker1:
+    displayname:
+      common: "Block Breaker I"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Break &632 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e10 &7Coins"
+      - ""
+      - "%status%"
+    slot: 10
+    material: "IRON_PICKAXE"
+    repeatable: false
+    objectives:
+      - "BlockBreakEvent,ANY,32"
+    commands:
+      - "eco give %player% 10"
+
+  blockbreaker2:
+    displayname:
+      common: "Block Breaker II"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Break &664 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 11
+    material: "IRON_PICKAXE"
+    repeatable: false
+    depend: "blockbreaker1"
+    objectives:
+      - "BlockBreakEvent,ANY,64"
+    commands:
+      - "eco give %player% 20"
+
+  blockbreaker3:
+    displayname:
+      common: "Block Breaker III"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Break &6128 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e40 &7Coins"
+      - ""
+      - "%status%"
+    slot: 12
+    material: "IRON_PICKAXE"
+    repeatable: false
+    depend: "blockbreaker2"
+    objectives:
+      - "BlockBreakEvent,ANY,128"
+    commands:
+      - "eco give %player% 40"
+
+  blockbreaker4:
+    displayname:
+      common: "Block Breaker IV"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Break &6256 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e80 &7Coins"
+      - ""
+      - "%status%"
+    slot: 13
+    material: "IRON_PICKAXE"
+    repeatable: false
+    depend: "blockbreaker3"
+    objectives:
+      - "BlockBreakEvent,ANY,256"
+    commands:
+      - "eco give %player% 80"
+
+  blockbreaker5:
+    displayname:
+      common: "Block Breaker V"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Break &6512 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e160 &7Coins"
+      - ""
+      - "%status%"
+    slot: 14
+    material: "IRON_PICKAXE"
+    repeatable: false
+    depend: "blockbreaker4"
+    objectives:
+      - "BlockBreakEvent,ANY,512"
+    commands:
+      - "eco give %player% 160"
+
+  blockbreaker6:
+    displayname:
+      common: "Block Breaker VI"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Break &61024 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e320 &7Coins"
+      - ""
+      - "%status%"
+    slot: 15
+    material: "IRON_PICKAXE"
+    repeatable: false
+    depend: "blockbreaker5"
+    objectives:
+      - "BlockBreakEvent,ANY,1024"
+    commands:
+      - "eco give %player% 320"
+
+  blockbreaker7:
+    displayname:
+      common: "Block Breaker VII"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Break &62048 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e640 &7Coins"
+      - ""
+      - "%status%"
+    slot: 16
+    material: "IRON_PICKAXE"
+    repeatable: false
+    depend: "blockbreaker6"
+    objectives:
+      - "BlockBreakEvent,ANY,2048"
+    commands:
+      - "eco give %player% 640"
+  #
+  # Damage Receiving Quests
+  #
+  damagereceiver1:
+    displayname:
+      common: "Damage Receiver I"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Receive &6100 &7points of damage!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e10 &7Coins"
+      - ""
+      - "%status%"
+    slot: 10
+    material: "IRON_HELMET"
+    objectives:
+      - "EntityDamageEvent,ANY,100"
+    commands:
+      - "eco give %player% 10"
+
+  damagereceiver2:
+    displayname:
+      common: "Damage Receiver II"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Receive &6200 &7points of damage!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 11
+    material: "IRON_HELMET"
+    depend: "damagereceiver1"
+    objectives:
+      - "EntityDamageEvent,ANY,200"
+    commands:
+      - "eco give %player% 20"
+
+  damagereceiver3:
+    displayname:
+      common: "Damage Receiver III"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Receive &6400 &7points of damage!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e40 &7Coins"
+      - ""
+      - "%status%"
+    slot: 12
+    material: "IRON_HELMET"
+    depend: "damagereceiver2"
+    objectives:
+      - "EntityDamageEvent,ANY,400"
+    commands:
+      - "eco give %player% 40"
+
+  damagereceiver4:
+    displayname:
+      common: "Damage Receiver IV"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Receive &6800 &7points of damage!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e80 &7Coins"
+      - ""
+      - "%status%"
+    slot: 13
+    material: "IRON_HELMET"
+    depend: "damagereceiver3"
+    objectives:
+      - "EntityDamageEvent,ANY,800"
+    commands:
+      - "eco give %player% 80"
+
+  damagereceiver5:
+    displayname:
+      common: "Damage Receiver V"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Receive &61600 &7points of damage!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e160 &7Coins"
+      - ""
+      - "%status%"
+    slot: 14
+    material: "IRON_HELMET"
+    depend: "damagereceiver4"
+    objectives:
+      - "EntityDamageEvent,ANY,1600"
+    commands:
+      - "eco give %player% 160"
+
+  damagereceiver6:
+    displayname:
+      common: "Damage Receiver VI"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Receive &63200 &7points of damage!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e320 &7Coins"
+      - ""
+      - "%status%"
+    slot: 15
+    material: "IRON_HELMET"
+    depend: "damagereceiver5"
+    objectives:
+      - "EntityDamageEvent,ANY,3200"
+    commands:
+      - "eco give %player% 320"
+
+  damagereceiver7:
+    displayname:
+      common: "Damage Receiver VII"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Receive &66400 &7points of damage!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e640 &7Coins"
+      - ""
+      - "%status%"
+    slot: 16
+    material: "IRON_HELMET"
+    depend: "damagereceiver6"
+    objectives:
+      - "EntityDamageEvent,ANY,6400"
+    commands:
+      - "eco give %player% 640"
+  #
+  # Repeatable quests
+  #
+  repeatable1:
+    displayname:
+      common: "Enderpearl (Repeatable)"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Use &616 &7enderpearls!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 10
+    material: "ENDER_PEARL"
+    repeatable: true
+    objectives:
+      - "ProjectileLaunchEvent,ENDER_PEARL,16"
+    commands:
+      - "eco give %player% 32"
+
+  repeatable2:
+    displayname:
+      common: "Sword Damage (Repeatable)"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6400 &7damage with swords!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 11
+    material: "IRON_SWORD"
+    repeatable: true
+    objectives:
+      - "EntityDamageByEntityEvent,SWORD,PLAYER,400"
+    commands:
+      - "eco give %player% 20"
+
+  repeatable3:
+    displayname:
+      common: "Bow Damage (Repeatable)"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Deal &6400 &7damage with bows!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 12
+    material: "BOW"
+    repeatable: true
+    objectives:
+      - "EntityDamageByEntityEvent,BOW,PLAYER,400"
+    commands:
+      - "eco give %player% 20"
+
+  repeatable4:
+    displayname:
+      common: "Void Killer (Repeatable)"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Kill &65 &7players by falling to the void!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 13
+    material: "SKULL_ITEM"
+    repeatable: true
+    objectives:
+      - "EntityDeathEvent,ANY,VOID,PLAYER,ANY,5"
+    commands:
+      - "eco give %player% 20"
+
+  repeatable5:
+    displayname:
+      common: "Wood Placer (Repeatable)"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Place &6128 &7wood blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 14
+    material: "WOOD"
+    repeatable: true
+    objectives:
+      - "BlockPlaceEvent,WOOD,128"
+    commands:
+      - "eco give %player% 20"
+
+  repeatable6:
+    displayname:
+      common: "Block Breaker (Repeatable)"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Break &664 &7blocks!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 15
+    material: "IRON_PICKAXE"
+    repeatable: true
+    objectives:
+      - "BlockBreakEvent,ANY,64"
+    commands:
+      - "eco give %player% 20"
+
+  repeatable7:
+    displayname:
+      common: "Damage Receiver (Repeatable)"
+      completed: "&a%displayname%"
+      current: "&e%displayname%"
+      blocked: "&c%displayname%"
+    lore:
+      - "&7Receive &6200 &7points of damage!"
+      - ""
+      - "&7Reward:"
+      - "&8+&e20 &7Coins"
+      - ""
+      - "%status%"
+    slot: 16
+    material: "IRON_HELMET"
+    repeatable: true
+    objectives:
+      - "EntityDamageEvent,ANY,200"
+    commands:
+      - "eco give %player% 20"
